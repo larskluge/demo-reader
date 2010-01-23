@@ -10,7 +10,8 @@ class DemoReaderWarsowWd11RaceTest < Test::Unit::TestCase
     %w(race_st1_07.848 st1 00:07.848),
     %w(race_wdm16_unfinished wdm16),
     %w(race_bardok-lick-revamped_54.882 bardok-lick-revamped 00:54.882),
-    %w(race_wrc03-3_28.684 wrc03-3 00:28.684)
+    %w(race_wrc03-3_28.684 wrc03-3 00:28.684),
+    %w(race_ghost-eikram2_25.848 ghost-eikram2 00:25.848)
   ].each do |entry|
 
     file, map, time = entry
