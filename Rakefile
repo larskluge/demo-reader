@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "demo-reader"
-    gem.summary = %Q{A library to read warsow and defrag demo files}
-    gem.description = %Q{A library to read warsow and defrag demo files}
+    gem.summary = %Q{A library to read warsow demo files}
+    gem.description = %Q{A library to read warsow demo files (.wd8, .wd9, .wd10, .wd11 files)}
     gem.email = "me@aekym.com"
     gem.homepage = "http://github.com/aekym/demo-reader"
     gem.authors = ["aekym"]

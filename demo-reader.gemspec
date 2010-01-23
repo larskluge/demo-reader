@@ -5,12 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = %q{demo-reader}
-  s.version = "0.0.1"
+  s.version = "0.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["aekym"]
-  s.date = %q{2010-01-16}
-  s.description = %q{A library to read warsow and defrag demo files}
+  s.date = %q{2010-01-23}
+  s.description = %q{A library to read warsow demo files (.wd8, .wd9, .wd10, .wd11 files)}
   s.email = %q{me@aekym.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -21,13 +21,40 @@ Gem::Specification.new do |s|
      "LICENSE",
      "README.rdoc",
      "Rakefile",
-     "VERSION"
+     "VERSION",
+     "demo-reader.gemspec",
+     "lib/demo-reader.rb",
+     "lib/demo_reader_warsow.rb",
+     "test/demo_reader_test.rb",
+     "test/demo_reader_warsow_wd10_race_test.rb",
+     "test/demo_reader_warsow_wd11_race_test.rb",
+     "test/fixtures/warsow/wd10/racesow_0.42.b2/dinirun2_racesow_0.42.b2.wd10",
+     "test/fixtures/warsow/wd10/racesow_local/boris.wd10",
+     "test/fixtures/warsow/wd10/racesow_local/die11.7.wd10",
+     "test/fixtures/warsow/wd10/racesow_local/dvr_antr.wd10",
+     "test/fixtures/warsow/wd10/racesow_local/e-lava.wd10",
+     "test/fixtures/warsow/wd10/racesow_local/j4n12.8.wd10",
+     "test/fixtures/warsow/wd10/racesow_local/terror.wd10",
+     "test/fixtures/warsow/wd10/racesow_local/yescomp006-2.wd10",
+     "test/fixtures/warsow/wd10/racesow_local/zugo.wd10",
+     "test/fixtures/warsow/wd10/trouble_making/2.wd10",
+     "test/fixtures/warsow/wd10/trouble_making/boris_cab1.wd10",
+     "test/fixtures/warsow/wd10/trouble_making/very_short_demo.wd10",
+     "test/fixtures/warsow/wd11/bomb_wbomb1_b2uberspot.wd11",
+     "test/fixtures/warsow/wd11/race_bardok-lick-revamped_54.882.wd11",
+     "test/fixtures/warsow/wd11/race_cwrace5.wd11",
+     "test/fixtures/warsow/wd11/race_ghost-eikram2_25.848.wd11",
+     "test/fixtures/warsow/wd11/race_killua-hykon.wd11",
+     "test/fixtures/warsow/wd11/race_st1_07.848.wd11",
+     "test/fixtures/warsow/wd11/race_wdm16_unfinished.wd11",
+     "test/fixtures/warsow/wd11/race_wrc03-3_28.684.wd11",
+     "test/helper.rb"
   ]
   s.homepage = %q{http://github.com/aekym/demo-reader}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}
-  s.summary = %q{A library to read warsow and defrag demo files}
+  s.summary = %q{A library to read warsow demo files}
   s.test_files = [
     "test/demo_reader_test.rb",
      "test/demo_reader_warsow_wd10_race_test.rb",
