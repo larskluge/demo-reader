@@ -31,8 +31,8 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #include "common.h"
 #include "huff.h"
 
-#define VALUE(a)      ((int   )(a))
-#define NODE(a)        ((void *)(a))
+#define VALUE(a)       (*(int  *)&(a))
+#define NODE(a)        ((void*)(a))
 
 #define NODE_START      NODE(  1)
 #define NODE_NONE      NODE(256)
@@ -112,7 +112,7 @@ static ID_INLINE void Huff_PrepareTree( tree_t tree ) {
 
   // create first node
   node = &tree[263];
-  VALUE( tree[0] )++;
+  tree[0] = NODE((VALUE(tree[0])+1));
 
   node[7] = NODE_NONE;
   tree[2] = node;
