@@ -61,7 +61,7 @@ class DemoReaderWarsow
 
 
     # detect scoreboard
-    #
+
     regex = /scb \"([^\"]+)/
     matchdata = regex.match(content)
 
@@ -73,7 +73,7 @@ class DemoReaderWarsow
 
 
     # detect game mode
-    #
+
     if @version == 11
       @gamemode = gamemode_wd11(content)
     else
@@ -100,7 +100,6 @@ class DemoReaderWarsow
 
 
     # detect time by sent message string with time from server
-    #
     if ['race', 'unknown'].include?(@gamemode)
       matches = []
       regex = /(server record|race finished)(?:!.*(?:current|times\^7 ))?:[0-9:\. ]* (\d+):(\d+)\.(\d+)/im
@@ -120,7 +119,6 @@ class DemoReaderWarsow
 
 
     #detect all player names
-    #
     matches = []
     regex = /cs ([0-9]+) \"\\name\\([^\0]*)\\hand/
     rest_content = content
@@ -146,7 +144,7 @@ class DemoReaderWarsow
 
 
     # detect player
-    #
+
     playernames = @playernames.compact.sort.uniq
     if playernames.length == 1
       @player = playernames.first
