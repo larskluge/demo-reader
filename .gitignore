@@ -19,3 +19,7 @@ rdoc
 pkg
 
 ## PROJECT::SPECIFIC
+*.o
+ext/dm68/Makefile
+ext/dm68/dm68.bundle
+
