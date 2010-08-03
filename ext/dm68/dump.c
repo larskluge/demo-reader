@@ -126,9 +126,9 @@ void GameStateParsed( void ) {
     configString = Com_GetStringFromGameState( &ds.gameState, i );
     if( configString[0] ) {
       if( i < RESERVED_CONFIGSTRINGS ) {
-        Com_Printf( "%s_info:\n", (i == CS_SERVERINFO) ? "server" : "system" );
+        append_result( "%s_info:\n", (i == CS_SERVERINFO) ? "server" : "system" );
         Info_Print( configString );
-        Com_Printf( "\n" );
+        append_result( "\n" );
       }/* else {
         Com_Printf( "configString %i: \"%s\"\n", i, configString );
       }*/
@@ -164,7 +164,7 @@ void NewFrameParsed( void ) {
       args[strlen(args)-2] = 0;
       args++;
 
-      Com_Printf("  - \"%s\"\n", args);
+      append_result("  - \"%s\"\n", args);
     } else if( !Q_stricmp( Cmd_Argv( 0 ), "cs" ) ) {
       UpdateConfigString( atoi( Cmd_Argv( 1 ) ), Cmd_Argv( 2 ) );
     }

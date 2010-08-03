@@ -1,8 +1,7 @@
 require 'yaml'
+require 'ext/dm68/dm68'
 
 class DemoReaderDefrag
-  DM68BIN = '../dm_68/bin/dm_68'
-
   attr_reader :filename, :version, :mapname, :time, :playernames, :scoreboards, :gamemode, :player, :basegamedir, :gamedir, :valid
 
 
@@ -28,8 +27,8 @@ class DemoReaderDefrag
 
 
 
-  def init()
-    out = `#{DM68BIN} "#{@filename}"`
+  def init
+    out = DM68.parse_file(@filename)
     @raw = YAML.load(out)
 
     raise out unless @raw

@@ -773,7 +773,7 @@ void Info_Print( const char *s ) {
     } else {
       *o = 0;
     }
-    Com_Printf( "  %s: ", key );
+    append_result("  %s: ", key);
 
     if( !*s ) {
       Com_Printf( "MISSING VALUE\n" );
@@ -791,7 +791,7 @@ void Info_Print( const char *s ) {
     if( *s ) {
       s++;
     }
-    Com_Printf("\"%s\"\n", value);
+    append_result("\"%s\"\n", value);
   }
 }
 

@@ -34,6 +34,24 @@ demoFileState_t  demo;
 demoState_t    ds;
 
 
+char result[MAXRESULT];
+/*
+ * appends a string to the final result string
+ *
+ */
+void append_result(const char *to_append, ...)
+{
+  va_list    argptr;
+  char    buffer[MAXRESULT];
+
+  va_start(argptr, to_append);
+  vsprintf(buffer, to_append, argptr);
+  va_end(argptr);
+
+  Q_strcat(result, MAXRESULT, buffer);
+}
+
+
 /*
 ============
 Com_AppendToGameState

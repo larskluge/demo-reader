@@ -28,6 +28,14 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #include "huff.h"
 #include "msg.h"
 
+// result
+//
+
+#define MAXRESULT 32000
+extern char result[MAXRESULT];
+void append_result(const char *to_append, ...);
+
+
 //
 // sizes of misc circular buffers in client and server system
 //

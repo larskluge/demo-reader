@@ -1,8 +1,10 @@
 #include "ruby.h"
 #include "main.h"
 
+
 static VALUE rb_mDM68;
 static VALUE rb_cDM68;
+
 
 
 
@@ -17,7 +19,7 @@ static VALUE parse_file(VALUE obj, VALUE path)
 
   Huff_Init();
 
-  Com_Printf("---\n");
+  append_result("---\n");
 
   while(!demo.gameStatesParsed) {
     if(!Parse_NextDemoMessage()) {
@@ -27,7 +29,7 @@ static VALUE parse_file(VALUE obj, VALUE path)
 
   GameStateParsed();
 
-  Com_Printf("prints:\n");
+  append_result("prints:\n");
 
   while(1) {
     if(!Parse_NextDemoMessage()) {
@@ -38,8 +40,7 @@ static VALUE parse_file(VALUE obj, VALUE path)
 
   fclose(demo.demofile);
 
-  return Qtrue;
-  /* return rb_str_new2(RSTRING(path)->ptr); */
+  return rb_str_new2(result);
 }
 
 
