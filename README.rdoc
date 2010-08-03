@@ -1,6 +1,6 @@
 = demo-reader
 
-A library to parse warsow demo files
+A library to parse warsow and q3 demo files
 
 == Note on Patches/Pull Requests
 

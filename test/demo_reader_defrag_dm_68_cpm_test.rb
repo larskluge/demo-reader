@@ -7,7 +7,7 @@ class DemoReaderDefragDm68CpmTest < Test::Unit::TestCase
 
   [
     %w(pornchronostar_mdf.cpm_00.49.216_tyaz.germany pornchronostar 00:49.216 *tyaz*),
-    %w(puremotion[df.cpm]00.10.600(eS-Rody.russia) puremotion 00:10.600 ^2eS-Rody)
+    %w(puremotion_df.cpm_00.10.600_eS-Rody.russia puremotion 00:10.600 ^2eS-Rody)
   ].each do |entry|
 
     file, map, time, player = entry

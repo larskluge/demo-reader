@@ -6,8 +6,8 @@ class DemoReaderDefragDm68Vq3Test < Test::Unit::TestCase
   gamemode = "vq3"
 
   [
-    %w(runkull2[df.vq3]01.05.904(XunderBIRD.Germany) runkull2 01:05.904 ^2XunderBIRD),
-    %w(un-dead029[df.vq3]00.16.912(uN-DeaD!WiNTeR.ru) un-dead029 00:16.912 ^2uN-DeaD!WiNTeR)
+    %w(runkull2_df.vq3_01.05.904_XunderBIRD.Germany runkull2 01:05.904 ^2XunderBIRD),
+    %w(un-dead029_df.vq3_00.16.912_uN-DeaD!WiNTeR.ru un-dead029 00:16.912 ^2uN-DeaD!WiNTeR)
   ].each do |entry|
 
     file, map, time, player = entry
