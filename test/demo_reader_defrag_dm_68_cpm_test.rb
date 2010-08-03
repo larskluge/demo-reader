@@ -2,6 +2,7 @@ require File.dirname(__FILE__) + '/helper'
 
 class DemoReaderDefragDm68CpmTest < Test::Unit::TestCase
 
+  game = "Defrag"
   version = 68
   gamemode = "cpm"
 
@@ -16,6 +17,7 @@ class DemoReaderDefragDm68CpmTest < Test::Unit::TestCase
       demo = DemoReader.parse("test/fixtures/defrag/dm_#{version}/#{gamemode}/#{file}.dm_#{version}")
 
       assert demo.valid
+      assert_equal game, demo.game
       assert_equal gamemode, demo.gamemode
       assert_equal version, demo.version
       assert_equal map, demo.mapname

@@ -2,13 +2,14 @@ require 'yaml'
 require 'dm68'
 
 class DemoReaderDefrag
-  attr_reader :filename, :version, :mapname, :time, :playernames, :scoreboards, :gamemode, :player, :basegamedir, :gamedir, :valid
+  attr_reader :filename, :version, :mapname, :time, :playernames, :scoreboards, :game, :gamemode, :player, :basegamedir, :gamedir, :valid
 
 
 
   def initialize(filename)
     @filename = filename
 
+    @game = "Defrag"
     @version = -1
     @mapname = nil
     @time = nil

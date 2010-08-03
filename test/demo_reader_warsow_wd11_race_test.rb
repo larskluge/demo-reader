@@ -2,6 +2,8 @@ require File.dirname(__FILE__) + '/helper'
 
 class DemoReaderWarsowWd11RaceTest < Test::Unit::TestCase
 
+  game = "Warsow"
+  gamemode = "race"
   version = 11
 
   [
@@ -20,7 +22,8 @@ class DemoReaderWarsowWd11RaceTest < Test::Unit::TestCase
       demo = DemoReader.parse("test/fixtures/warsow/wd#{version}/#{file}.wd#{version}")
 
       assert demo.valid
-      assert_equal "race", demo.gamemode
+      assert_equal game, demo.game
+      assert_equal gamemode, demo.gamemode
       assert_equal version, demo.version
       assert_equal map, demo.mapname
       assert_equal time, demo.time if time
