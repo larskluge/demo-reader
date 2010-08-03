@@ -12,6 +12,11 @@ static VALUE parse_file(VALUE obj, VALUE path)
 {
   Check_Type(path, T_STRING);
 
+  // reset global state
+  memset(result, 0, MAXRESULT);
+  demo.demoMessageSequence = 0;
+  demo.gameStatesParsed = 0;
+
   if(!(demo.demofile=fopen(RSTRING(path)->ptr, "rb")))
   {
     Com_Error(ERR_FATAL, "Couldn't open demofile");
