@@ -1,5 +1,5 @@
 require 'yaml'
-require 'ext/dm68/dm68'
+require 'dm68'
 
 class DemoReaderDefrag
   attr_reader :filename, :version, :mapname, :time, :playernames, :scoreboards, :gamemode, :player, :basegamedir, :gamedir, :valid
