@@ -58,6 +58,11 @@ class DemoReaderWarsow
     content = file.gets nil
     file.close
 
+    # remove illegal utf8 chars that crashes ruby 1.9.x
+    #
+    if RUBY_VERSION >= "1.9"
+      content.encode!("ISO-8859-1", :invalid => :replace, :undef => :replace) # iso is just fine (no other chars expected)
+    end
 
 
 

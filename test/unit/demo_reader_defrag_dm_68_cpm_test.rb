@@ -1,14 +1,16 @@
-require File.dirname(__FILE__) + '/helper'
+$LOAD_PATH << File.dirname(__FILE__) + '/..'
+require "helper"
 
-class DemoReaderDefragDm68Vq3Test < Test::Unit::TestCase
+
+class DemoReaderDefragDm68CpmTest < Test::Unit::TestCase
 
   game = "Defrag"
   version = 68
-  gamemode = "vq3"
+  gamemode = "cpm"
 
   [
-    %w(runkull2_df.vq3_01.05.904_XunderBIRD.Germany runkull2 01:05.904 ^2XunderBIRD),
-    %w(un-dead029_df.vq3_00.16.912_uN-DeaD!WiNTeR.ru un-dead029 00:16.912 ^2uN-DeaD!WiNTeR)
+    %w(pornchronostar_mdf.cpm_00.49.216_tyaz.germany pornchronostar 00:49.216 *tyaz*),
+    %w(puremotion_df.cpm_00.10.600_eS-Rody.russia puremotion 00:10.600 ^2eS-Rody)
   ].each do |entry|
 
     file, map, time, player = entry

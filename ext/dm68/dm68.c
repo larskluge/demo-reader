@@ -1,6 +1,11 @@
 #include "ruby.h"
 #include "main.h"
 
+// backward compatibility for ruby 1.8
+#ifndef RSTRING_PTR
+#define RSTRING_PTR(s) RSTRING(s)->ptr
+#endif
+
 
 static VALUE rb_mDM68;
 static VALUE rb_cDM68;
@@ -17,7 +22,7 @@ static VALUE parse_file(VALUE obj, VALUE path)
   demo.demoMessageSequence = 0;
   demo.gameStatesParsed = 0;
 
-  if(!(demo.demofile=fopen(RSTRING(path)->ptr, "rb")))
+  if(!(demo.demofile=fopen(RSTRING_PTR(path), "rb")))
   {
     Com_Error(ERR_FATAL, "Couldn't open demofile");
   }

@@ -1,4 +1,5 @@
-require File.dirname(__FILE__) + '/helper'
+$LOAD_PATH << File.dirname(__FILE__) + '/..'
+require "helper"
 
 class DemoReaderWarsowWd11RaceTest < Test::Unit::TestCase
 
