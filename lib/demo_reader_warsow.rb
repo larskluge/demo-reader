@@ -120,6 +120,10 @@ class DemoReaderWarsow
         @time = matches.sort.first
         @gamemode = 'race' if @gamemode == 'unknown'
       end
+
+      # set gamemode to freestyle when no time exists
+      #
+      @gamemode = 'freestyle' if time_in_msec.to_i <= 0
     end
 
 
