@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{demo-reader}
-  s.version = "0.2.1"
+  s.version = "0.2.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["aekym"]
-  s.date = %q{2010-09-01}
+  s.date = %q{2010-11-01}
   s.description = %q{A library to read warsow demo files (.wd8, .wd9, .wd10, .wd11 files) and q3 demo files (*.dm68)}
   s.email = %q{me@aekym.com}
   s.extensions = ["ext/dm68/extconf.rb"]
@@ -56,10 +56,10 @@ Gem::Specification.new do |s|
      "test/fixtures/warsow/wd10/trouble_making/2.wd10",
      "test/fixtures/warsow/wd10/trouble_making/boris_cab1.wd10",
      "test/fixtures/warsow/wd10/trouble_making/very_short_demo.wd10",
-     "test/fixtures/warsow/wd11/bomb_wbomb1_b2uberspot.wd11",
      "test/fixtures/warsow/wd11/freestyle_freestyle88.wd11",
      "test/fixtures/warsow/wd11/race_bardok-lick-revamped_54.882.wd11",
      "test/fixtures/warsow/wd11/race_cwrace5.wd11",
+     "test/fixtures/warsow/wd11/race_gdfcomp08_14.949.wd11",
      "test/fixtures/warsow/wd11/race_ghost-eikram2_25.848.wd11",
      "test/fixtures/warsow/wd11/race_killua-hykon.wd11",
      "test/fixtures/warsow/wd11/race_st1_07.848.wd11",
