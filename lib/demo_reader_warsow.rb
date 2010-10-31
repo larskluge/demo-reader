@@ -108,7 +108,7 @@ class DemoReaderWarsow
     # detect time by sent message string with time from server
     if ['race', 'unknown'].include?(@gamemode)
       matches = []
-      regex = /(server record|race finished)(?:!.*(?:current|times\^7 ))?:[0-9:\. ]* (\d+):(\d+)\.(\d+)/im
+      regex = /(server record|race(?: ?[\d#\^]*) finished)(?:!.*(?:current|times\^7 ))?:[0-9:\. ]* (\d+):(\d+)\.(\d+)/im
       matchdata = regex.match(content)
 
       while matchdata
