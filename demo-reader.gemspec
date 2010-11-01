@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{demo-reader}
-  s.version = "0.2.2"
+  s.version = "0.2.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["aekym"]
@@ -62,6 +62,7 @@ Gem::Specification.new do |s|
      "test/fixtures/warsow/wd11/race_gdfcomp08_14.949.wd11",
      "test/fixtures/warsow/wd11/race_ghost-eikram2_25.848.wd11",
      "test/fixtures/warsow/wd11/race_killua-hykon.wd11",
+     "test/fixtures/warsow/wd11/race_snx-10_12.996.wd11",
      "test/fixtures/warsow/wd11/race_st1_07.848.wd11",
      "test/fixtures/warsow/wd11/race_wdm16_unfinished.wd11",
      "test/fixtures/warsow/wd11/race_wrc03-3_28.684.wd11",
