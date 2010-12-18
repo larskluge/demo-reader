@@ -15,7 +15,7 @@ class DemoReaderDefragDm68CpmTest < Test::Unit::TestCase
 
     file, map, time, player = entry
 
-    define_method "test_warsow_wd#{version}_demo_#{file.gsub(/[^a-z_0-9]/, "_")}" do
+    define_method "test_defrag_dm_#{version}_demo_#{file.gsub(/[^a-z_0-9]/, "_")}" do
       demo = DemoReader.parse("test/fixtures/defrag/dm_#{version}/#{gamemode}/#{file}.dm_#{version}")
 
       assert demo.valid

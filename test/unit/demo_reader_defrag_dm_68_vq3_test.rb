@@ -9,12 +9,13 @@ class DemoReaderDefragDm68Vq3Test < Test::Unit::TestCase
 
   [
     %w(runkull2_df.vq3_01.05.904_XunderBIRD.Germany runkull2 01:05.904 ^2XunderBIRD),
-    %w(un-dead029_df.vq3_00.16.912_uN-DeaD!WiNTeR.ru un-dead029 00:16.912 ^2uN-DeaD!WiNTeR)
+    %w(un-dead029_df.vq3_00.16.912_uN-DeaD!WiNTeR.ru un-dead029 00:16.912 ^2uN-DeaD!WiNTeR),
+    %w(cyfio-df_mdf.vq3_06.25.832_rlxmini.CountryHere cyfio-df 06:25.832 r^1l^7x^0|^7m^1i^7n^1i)
   ].each do |entry|
 
     file, map, time, player = entry
 
-    define_method "test_warsow_wd#{version}_demo_#{file.gsub(/[^a-z_0-9]/, "_")}" do
+    define_method "test_defrag_dm_#{version}_demo_#{file.gsub(/[^a-z_0-9]/, "_")}" do
       demo = DemoReader.parse("test/fixtures/defrag/dm_#{version}/#{gamemode}/#{file}.dm_#{version}")
 
       assert demo.valid
