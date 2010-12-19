@@ -18,7 +18,7 @@ class DemoReaderDefragDm68CpmTest < Test::Unit::TestCase
     time_hint = entry.last if entry.size > 4
 
     define_method "test_defrag_dm_#{version}_demo_#{file.gsub(/[^a-z_0-9]/, "_")}" do
-      demo = DemoReader.parse("test/fixtures/defrag/dm_#{version}/#{gamemode}/#{file}.dm_#{version}", time_hint)
+      demo = DemoReader.parse("test/fixtures/defrag/dm_#{version}/#{gamemode}/#{file}.dm_#{version}", :hint_for_time => time_hint)
 
       assert demo.valid
       assert_equal game, demo.game
@@ -29,6 +29,14 @@ class DemoReaderDefragDm68CpmTest < Test::Unit::TestCase
       assert_equal time, demo.time
     end
 
+  end
+
+  def test_ignore_errors_option
+    demo = DemoReader.parse("test/fixtures/defrag/dm_68/cpm/mega_wood[mdf.cpm]_without_time_hint_\(kreator.Germany\).dm_68",
+                            :raise_errors => false)
+
+    assert demo.valid
+    assert_equal "mega_wood", demo.mapname
   end
 
 end

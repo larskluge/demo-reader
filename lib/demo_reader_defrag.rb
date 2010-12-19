@@ -7,9 +7,9 @@ class DemoReaderDefrag
 
 
 
-  def initialize(filename, hint_for_time = nil)
+  def initialize(filename, opts)
     @filename = filename
-    @hint_for_time = hint_for_time
+    @opts = opts
 
     @game = "Defrag"
     @version = -1
@@ -34,7 +34,7 @@ class DemoReaderDefrag
     out = DM68.parse_file(@filename)
     @raw = YAML.load(out)
 
-    raise out unless @raw
+    conditionally_raise out unless @raw
 
     @version = @raw['server_info']['protocol'].to_i
     @mapname = @raw['server_info']['mapname'].downcase
@@ -46,7 +46,7 @@ class DemoReaderDefrag
     if @raw['server_info']['defrag_vers'].to_i > 0
       @gamemode = @raw['server_info']['df_promode'].to_i.zero? ? 'vq3' : 'cpm'
 
-      time_hint = extract_time_from_filename(@hint_for_time || @filename)
+      time_hint = extract_time_from_filename(@opts[:hint_for_time])
       @time = extract_time(@raw['prints'], time_hint)
 
       @player = extract_player(@raw['prints'], @time)
@@ -72,7 +72,13 @@ class DemoReaderDefrag
 
   protected
 
+  def conditionally_raise(msg)
+    raise msg if @opts[:raise_errors]
+  end
+
   def guessable_time(time)
+    return nil if time.blank?
+
     time = time.sub(/^[0:\.]*/, "") # remove empty min, sec, etc
     parts = time.split(/\.|:/).map(&:to_i)
 
@@ -96,8 +102,8 @@ class DemoReaderDefrag
       arr
     end
 
-    raise "No player was found." if players.empty?
-    raise "Not only one player was found #{players.inspect}." if players.size > 1
+    conditionally_raise "No player was found." if players.empty?
+    conditionally_raise "Not only one player was found #{players.inspect}." if players.size > 1
 
     players.first
   end
@@ -117,7 +123,7 @@ class DemoReaderDefrag
       arr
     end
 
-    raise "No time was found." if times.empty?
+    conditionally_raise "No time was found." if times.empty?
     return times.first if times.one?
 
     # multiple times found
@@ -126,7 +132,7 @@ class DemoReaderDefrag
     time_hint = normalize_time(time_hint) if time_hint.present?
     return time_hint if times.member?(time_hint)
 
-    raise "Not only one time was found #{times.inspect}."
+    conditionally_raise "Not only one time was found #{times.inspect}."
   end
 
   def plain_text(text)
