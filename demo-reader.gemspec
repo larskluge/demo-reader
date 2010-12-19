@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{demo-reader}
-  s.version = "0.2.4"
+  s.version = "0.2.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["aekym"]
@@ -42,7 +42,6 @@ Gem::Specification.new do |s|
      "lib/demo_reader_warsow.rb",
      "test/fixtures/defrag/dm_68/cpm/pornchronostar_mdf.cpm_00.49.216_tyaz.germany.dm_68",
      "test/fixtures/defrag/dm_68/cpm/puremotion_df.cpm_00.10.600_eS-Rody.russia.dm_68",
-     "test/fixtures/defrag/dm_68/vq3/cyfio-df_mdf.vq3_06.25.832_rlxmini.CountryHere.dm_68",
      "test/fixtures/defrag/dm_68/vq3/runkull2_df.vq3_01.05.904_XunderBIRD.Germany.dm_68",
      "test/fixtures/defrag/dm_68/vq3/un-dead029_df.vq3_00.16.912_uN-DeaD!WiNTeR.ru.dm_68",
      "test/fixtures/warsow/wd10/racesow_0.42.b2/dinirun2_racesow_0.42.b2.wd10",
