@@ -7,8 +7,9 @@ class DemoReaderDefrag
 
 
 
-  def initialize(filename)
+  def initialize(filename, hint_for_time = nil)
     @filename = filename
+    @hint_for_time = hint_for_time
 
     @game = "Defrag"
     @version = -1
@@ -45,7 +46,7 @@ class DemoReaderDefrag
     if @raw['server_info']['defrag_vers'].to_i > 0
       @gamemode = @raw['server_info']['df_promode'].to_i.zero? ? 'vq3' : 'cpm'
 
-      time_hint = extract_time_from_filename(@filename)
+      time_hint = extract_time_from_filename(@hint_for_time || @filename)
       @time = extract_time(@raw['prints'], time_hint)
 
       @player = extract_player(@raw['prints'], @time)
@@ -103,7 +104,8 @@ class DemoReaderDefrag
 
 
   def extract_time_from_filename(filename)
-    $1 if File.basename(filename) =~ /(\d{2}\.\d{2}\.\d{3})/
+    filename = File.basename(filename) if File.exists?(filename)
+    $1 if filename =~ /(\d{2}\.\d{2}\.\d{3})/
   end
 
   # extract time from server prints

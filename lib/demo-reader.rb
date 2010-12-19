@@ -10,8 +10,8 @@ class DemoReader
   #
   # @returns an instance of DemoReaderWarsow or DemoReaderDefrag or nil on failure
   #
-  def self.parse(filename)
-    try_warsow(filename) || try_defrag(filename)
+  def self.parse(filename, hint_for_time = nil)
+    try_warsow(filename) || try_defrag(filename, hint_for_time)
   end
 
 
@@ -23,8 +23,8 @@ class DemoReader
     demo.valid ? demo : nil
   end
 
-  def self.try_defrag(filename)
-    demo = DemoReaderDefrag.new(filename)
+  def self.try_defrag(filename, hint_for_time)
+    demo = DemoReaderDefrag.new(filename, hint_for_time)
 
     demo.valid ? demo : nil
   end
