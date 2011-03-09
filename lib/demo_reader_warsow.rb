@@ -30,13 +30,13 @@ class DemoReaderWarsow
     @version = detect_version(file)
 
     # just support some wd* file versions
-    return unless [8, 9, 10, 11].include? @version
+    return unless [8, 9, 10, 11, 12].include? @version
 
     # skip 4 bytes "svs.spawncount"
     file.pos += 4
 
     # skip 2 bytes "cl.snapFrameTime"
-    file.pos += 2 if [10, 11].include? @version
+    file.pos += 2 if [10, 11, 12].include? @version
 
     # skip 4 bytes "cl.baseServerTime"
     file.pos += 4 if @version == 10
@@ -80,8 +80,8 @@ class DemoReaderWarsow
 
     # detect game mode
 
-    if @version == 11
-      @gamemode = gamemode_wd11(content)
+    if @version >= 11
+      @gamemode = gamemode_wd1x(content)
     else
       regex = /&([^ ]+) /
 
@@ -177,7 +177,7 @@ class DemoReaderWarsow
 
 
   def detect_version(file)
-    # try to detect version 8, 9 or 10
+    # try to detect version 8, 9, 11, 12
     #
     file.pos = 0
 
@@ -188,7 +188,7 @@ class DemoReaderWarsow
     # reads 4 bytes and decodes the little-endian format
     version = file.read(4).unpack('V')[0]
 
-    return version if [8, 9, 10].include? version
+    return version if [8, 9, 10].include?(version)
 
 
     # try to detect version 11
@@ -209,7 +209,7 @@ class DemoReaderWarsow
     # reads 4 bytes and decodes the little-endian format
     version = file.read(4).unpack('V')[0]
 
-    return version if version == 11
+    return version if [11, 12].include?(version)
 
     nil # could not detect any known version
   end
@@ -226,7 +226,7 @@ class DemoReaderWarsow
   end
 
 
-  def gamemode_wd11(file_content)
+  def gamemode_wd1x(file_content)
     if file_content =~ /cs 12 "(.*?)"/
       $1
     end
