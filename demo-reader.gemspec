@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{demo-reader}
-  s.version = "0.2.6"
+  s.version = "0.3.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["aekym"]
-  s.date = %q{2010-12-19}
+  s.date = %q{2011-03-09}
   s.description = %q{A library to read warsow demo files (.wd8, .wd9, .wd10, .wd11 files) and q3 demo files (*.dm68)}
   s.email = %q{me@aekym.com}
   s.extensions = ["ext/dm68/extconf.rb"]
@@ -66,13 +66,18 @@ Gem::Specification.new do |s|
      "test/fixtures/warsow/wd11/race_st1_07.848.wd11",
      "test/fixtures/warsow/wd11/race_wdm16_unfinished.wd11",
      "test/fixtures/warsow/wd11/race_wrc03-3_28.684.wd11",
+     "test/fixtures/warsow/wd12/freestyle_wctf1.wd12",
+     "test/fixtures/warsow/wd12/race_bardok-egypt_10.690.wd12",
+     "test/fixtures/warsow/wd12/race_bardok-w3sp_18.000.wd12",
+     "test/fixtures/warsow/wd12/race_cjscomp008.wd12",
      "test/helper.rb",
      "test/unit/demo_reader_defrag_dm_68_cpm_test.rb",
      "test/unit/demo_reader_defrag_dm_68_vq3_test.rb",
      "test/unit/demo_reader_test.rb",
      "test/unit/demo_reader_warsow_wd10_race_test.rb",
      "test/unit/demo_reader_warsow_wd11_freestyle_test.rb",
-     "test/unit/demo_reader_warsow_wd11_race_test.rb"
+     "test/unit/demo_reader_warsow_wd11_race_test.rb",
+     "test/unit/demo_reader_warsow_wd12_race_test.rb"
   ]
   s.homepage = %q{http://github.com/aekym/demo-reader}
   s.rdoc_options = ["--charset=UTF-8"]
@@ -86,7 +91,8 @@ Gem::Specification.new do |s|
      "test/unit/demo_reader_test.rb",
      "test/unit/demo_reader_warsow_wd10_race_test.rb",
      "test/unit/demo_reader_warsow_wd11_freestyle_test.rb",
-     "test/unit/demo_reader_warsow_wd11_race_test.rb"
+     "test/unit/demo_reader_warsow_wd11_race_test.rb",
+     "test/unit/demo_reader_warsow_wd12_race_test.rb"
   ]
 
   if s.respond_to? :specification_version then
