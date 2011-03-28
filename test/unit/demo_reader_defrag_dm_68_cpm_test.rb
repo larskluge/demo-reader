@@ -11,7 +11,7 @@ class DemoReaderDefragDm68CpmTest < Test::Unit::TestCase
   [
     %w(pornchronostar_mdf.cpm_00.49.216_tyaz.germany pornchronostar 00:49.216 *tyaz*),
     %w(puremotion_df.cpm_00.10.600_eS-Rody.russia puremotion 00:10.600 ^2eS-Rody),
-    %w(mega_wood[mdf.cpm]_without_time_hint_\(kreator.Germany\) mega_wood 00:14.752 r^8l^7x^0|^7Kr^8e^7ator here is the time hint: 00.14.752)
+    %w(mega_wood[mdf.cpm]_without_time_hint_\(kreator.Germany\) mega_wood 00:14.752 r^8l^7x^0|^7Kr^8e^7ator here_is_the_time_hint:_00.14.752)
   ].each do |entry|
 
     file, map, time, player = entry
